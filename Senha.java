@@ -12,19 +12,13 @@ public class Senha {
         }
     }
 
-    public int encontrarSenha() {
-        for (int valor=0; valor<10; valor++) {
-            if (valor == lista.get(0)) {
-                return valor;
-            } 
-            for (int valor1=0; valor1<10; valor1++) {
-                if (valor1 == lista.get(1)) {
-                    return valor1;
-                } 
+    public void encontrarSenha() {
+        for (int valor = 0; valor < 10; valor++) {
+            for (int i = 0; i < lista.size(); i++) {
+                if (valor == lista.get(i)) {
+                    System.out.println(valor);
+                }
+            }
+        }
     }
-}
-        return -1;
-
-    }
-
 }
