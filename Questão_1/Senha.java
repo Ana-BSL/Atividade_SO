@@ -13,13 +13,19 @@ public class Senha {
         }
     }
 
-    public void encontrarSenha() {
+    public int encontrarSenha() {
         for (int valor = 0; valor < 10; valor++) {
             for (int i = 0; i < lista.size(); i++) {
                 if (valor == lista.get(i)) {
-                    System.out.println(valor);
+                    return valor; // Retorna o valor encontrado
                 }
             }
         }
+
+        return -1; // Retorna -1 caso nenhum valor seja encontrado
     }
 }
+
+
+
+
