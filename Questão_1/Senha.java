@@ -2,6 +2,8 @@ package Questão_1;
 import java.util.ArrayList;
 import java.util.Random;
 
+import Questão_2.Parque;
+
 public class Senha {
     ArrayList<Integer> lista = new ArrayList<>();
 
@@ -17,14 +19,16 @@ public class Senha {
         for (int valor = 0; valor < 10; valor++) {
             for (int i = 0; i < lista.size(); i++) {
                 if (valor == lista.get(i)) {
-                    return valor; // Retorna o valor encontrado
+                    return valor;
                 }
             }
         }
 
-        return -1; // Retorna -1 caso nenhum valor seja encontrado
+        return -1; 
     }
 }
+
+
 
 
 
