@@ -1,35 +1,26 @@
 package Questão_1;
+
 import java.util.ArrayList;
 import java.util.Random;
 
-import Questão_2.Parque;
-
 public class Senha {
-    ArrayList<Integer> lista = new ArrayList<>();
 
-    public void adicionar() {
+    int TAMANHO_MAXIMO = 9;
+    ArrayList<Integer> dados = new ArrayList<Integer>();
+
+    public synchronized void inserir() throws InterruptedException {
         Random senha = new Random();
-
-        for (int i = 0; i < 10; i++) {
-            lista.add(senha.nextInt(10));
+        for (int i = 0; i <= TAMANHO_MAXIMO; i++) {
+            dados.add(senha.nextInt(10));
         }
     }
 
-    public int encontrarSenha() {
-        for (int valor = 0; valor < 10; valor++) {
-            for (int i = 0; i < lista.size(); i++) {
-                if (valor == lista.get(i)) {
-                    return valor;
-                }
-            }
+    public synchronized int pegarValor() {
+        int resultado = 0;
+        for (int i = 0; i < dados.size(); i++) {
+            resultado += dados.get(i);
         }
-
-        return -1; 
+        return resultado;
     }
 }
-
-
-
-
-
 
