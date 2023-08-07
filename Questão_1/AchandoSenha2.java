@@ -1,7 +1,7 @@
 package Questão_1;
 
 public class AchandoSenha2 extends Thread {
-    private Senha dados;
+    private final Senha dados;
 
     public AchandoSenha2(Senha param) {
         dados = param;
@@ -11,16 +11,13 @@ public class AchandoSenha2 extends Thread {
         try {
             while (true) {
                 sleep(2000);
-                synchronized (dados) {
-                    int value = dados.pegarValor();
-                    System.out.println("senha encontrada: " + value);
-                }
+                int valorAtual = dados.pegarValor();
+                System.out.println("Thread 2 - Senha encontrada: " + valorAtual);
+
             }
-        } catch (InterruptedException e) {
+        } catch (Exception e) {
             e.printStackTrace();
+
         }
     }
 }
-
-
-
