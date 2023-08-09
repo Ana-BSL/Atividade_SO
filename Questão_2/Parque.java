@@ -15,7 +15,6 @@ public class Parque {
         return nome;
     }
 
-    //sincronizar as turmas que cheram no parque, ou seja, uma thread por vez pode sincronizar
     public synchronized void turmaChegou() throws InterruptedException {
         turmasNaChegada++;
 
