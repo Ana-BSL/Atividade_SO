@@ -9,12 +9,17 @@ public class AchandoSenha extends Thread {
 
     public void run() {
         try {
-            while (true) {
+            int valorAtual =0;
+            while (!dados.isSenhaEncontrada()) {
                 sleep(2100);
-                int valorAtual = dados.pegarValor();
-                System.out.println("Thread 1 - Senha encontrada: " + valorAtual);
+                valorAtual = dados.pegarValor();
+                if(valorAtual!=0){
+                    dados.setSenhaEncontrada(true);
+                }
 
             }
+            System.out.println(dados.getNome() + " chegou ao " + dados.getNome());
+
         } catch (Exception e) {
             e.printStackTrace();
         }

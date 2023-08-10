@@ -8,10 +8,16 @@ public class Senha {
     private final ArrayList<Integer> dados = new ArrayList<>();
     private final int senhaCorreta;
     private boolean senhaEncontrada = false;
+    private String nome;
 
-    public Senha() {
+    public Senha(String nome) {
+        this.nome = nome;
         gerarNovaSenha();
         senhaCorreta = pegarValor();
+    }
+
+    public String getNome() {
+        return nome;
     }
 
     public synchronized void gerarNovaSenha() {
@@ -28,6 +34,7 @@ public class Senha {
             resultado = resultado * 10 + dados.get(i);
         }
         return resultado;
+
     }
 
     public int getSenhaCorreta() {
@@ -42,6 +49,3 @@ public class Senha {
         this.senhaEncontrada = senhaEncontrada;
     }
 }
-
-
-

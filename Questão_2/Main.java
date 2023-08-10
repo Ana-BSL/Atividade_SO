@@ -2,7 +2,7 @@ package Questão_2;
 
 public class Main {
     public static void main(String[] args) {
-        int numParques = 5;
+        int numParques = 4;
         int numTurmas = 3;
 
         Parque[] parques = new Parque[numParques];
